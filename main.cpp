@@ -10,7 +10,7 @@ const int WALL_THICKNESS = 1; // Độ dày của tường
 const int MAP_ROWS = SCREEN_HEIGHT / TILE_SIZE;
 const int MAP_COLS = SCREEN_WIDTH / TILE_SIZE;
 const int TANK_SPEED = 1; // Giảm tốc độ xe
-const int BULLET_SPEED = 1;
+const int BULLET_SPEED = 2;
 
 int map[MAP_ROWS][MAP_COLS];
 
