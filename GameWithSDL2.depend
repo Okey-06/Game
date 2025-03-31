@@ -1,42 +1,43 @@
 # depslib dependency file v1.0
-1743120597 source:c:\users\admin\desktop\code\gamewithsdl2\main.cpp
+1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\main.cpp
 	"Game.h"
 	"Globals.h"
 	"Menu.h"
 
-1743357852 c:\users\admin\desktop\code\gamewithsdl2\game.h
+1743448788 c:\users\admin\desktop\code\gamewithsdl2\game.h
 	"Map.h"
 	"Player.h"
 	"Enemy.h"
 
-1743358205 c:\users\admin\desktop\code\gamewithsdl2\texturemanager.h
+1743397592 c:\users\admin\desktop\code\gamewithsdl2\texturemanager.h
 	"Globals.h"
 
-1743369465 source:c:\users\admin\desktop\code\gamewithsdl2\texturemanager.cpp
+1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\texturemanager.cpp
 	"TextureManager.h"
 
-1743393288 source:c:\users\admin\desktop\code\gamewithsdl2\game.cpp
+1743451961 source:c:\users\admin\desktop\code\gamewithsdl2\game.cpp
 	"Game.h"
 
-1743395951 c:\users\admin\desktop\code\gamewithsdl2\player.h
+1743448996 c:\users\admin\desktop\code\gamewithsdl2\player.h
 	"Map.h"
 	"Inventory.h"
 	"Enemy.h"
 
-1743393764 source:c:\users\admin\desktop\code\gamewithsdl2\player.cpp
+1743449058 source:c:\users\admin\desktop\code\gamewithsdl2\player.cpp
 	"Player.h"
+	"Game.h"
 
-1743374777 c:\users\admin\desktop\code\gamewithsdl2\map.h
+1743397592 c:\users\admin\desktop\code\gamewithsdl2\map.h
 	"Globals.h"
 	"TextureManager.h"
 
-1743395631 source:c:\users\admin\desktop\code\gamewithsdl2\map.cpp
+1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\map.cpp
 	"Map.h"
 
-1743391742 source:c:\users\admin\desktop\code\gamewithsdl2\globals.cpp
+1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\globals.cpp
 	"Globals.h"
 
-1743390722 c:\users\admin\desktop\code\gamewithsdl2\globals.h
+1743449998 c:\users\admin\desktop\code\gamewithsdl2\globals.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
@@ -52,23 +53,23 @@
 	<utility>
 	<cmath>
 
-1743395998 source:c:\users\admin\desktop\code\gamewithsdl2\menu.cpp
+1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\menu.cpp
 	"Menu.h"
 
-1743395151 c:\users\admin\desktop\code\gamewithsdl2\menu.h
+1743397592 c:\users\admin\desktop\code\gamewithsdl2\menu.h
 	"Globals.h"
 
-1743390933 source:c:\users\admin\desktop\code\gamewithsdl2\inventory.cpp
+1743452087 source:c:\users\admin\desktop\code\gamewithsdl2\inventory.cpp
 	"Inventory.h"
 
-1743390933 c:\users\admin\desktop\code\gamewithsdl2\inventory.h
+1743397592 c:\users\admin\desktop\code\gamewithsdl2\inventory.h
 	"TextureManager.h"
 
-1743392503 c:\users\admin\desktop\code\gamewithsdl2\enemy.h
+1743397592 c:\users\admin\desktop\code\gamewithsdl2\enemy.h
 	"TextureManager.h"
 	"Map.h"
 
-1743395631 source:c:\users\admin\desktop\code\gamewithsdl2\enemy.cpp
+1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\enemy.cpp
 	"Enemy.h"
 	"Player.h"
 

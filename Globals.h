@@ -52,6 +52,11 @@ extern const float SLIMEZOMBIE_EXP_REWARD;  // EXP khi giết SlimeZombie
 extern const int PlayerSpawnX;
 extern const int PlayerSpawnY;
 
+extern std::vector<Mix_Music*> musicPlaylist; // Danh sách nhạc
+extern int currentMusicIndex;                // Chỉ số bài nhạc hiện tại
+extern int musicVolume;                      // Âm lượng (0-128)
+extern Mix_Chunk* jumpSound; // Âm thanh nhảy
+
 struct Map{
     int start_x;
     int start_y;

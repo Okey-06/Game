@@ -266,6 +266,45 @@ void Inventory::render(SDL_Renderer* renderer, TextureManager& textureManager) {
         }
     }
 
+    // Vẽ inventory (backpack) khi mở
+    if (inventoryOpen) {
+        for (int row = 0; row < invRows; row++) {
+            for (int col = 0; col < invCols; col++) {
+                SDL_Rect slot = { startX + col * (slotSize + spacing), startYInventory + row * (slotSize + spacing), slotSize, slotSize };
+
+                // Kiểm tra nếu ô đang được hover hoặc chọn
+                bool isHovered = (hoveredInventoryRow == row && hoveredInventoryCol == col);
+                bool isSelected = (selectedInventoryRow == row && selectedInventoryCol == col);
+                if (isSelected) {
+                    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);  // Viền đỏ khi chọn
+                } else if (isHovered) {
+                    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);  // Viền xanh khi hover
+                } else {
+                    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Viền trắng mặc định
+                }
+                SDL_RenderDrawRect(renderer, &slot);
+
+                // Vẽ item trong ô backpack
+                SDL_Texture* texture = textureManager.getTexture(backpack[row][col].nameid);
+                if (texture) {
+                    SDL_RenderCopy(renderer, texture, nullptr, &slot);
+                }
+
+                // Vẽ số lượng nếu > 1
+                if (backpack[row][col].quantity > 1) {
+                    SDL_Color white = {255, 255, 255, 255};
+                    std::string qtyText = std::to_string(backpack[row][col].quantity);
+                    SDL_Surface* surface = TTF_RenderText_Solid(font, qtyText.c_str(), white);
+                    SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, surface);
+                    SDL_Rect textRect = {slot.x + slotSize - 20, slot.y + slotSize - 20, surface->w, surface->h};
+                    SDL_RenderCopy(renderer, textTexture, nullptr, &textRect);
+                    SDL_FreeSurface(surface);
+                    SDL_DestroyTexture(textTexture);
+                }
+            }
+        }
+    }
+
     // Vẽ menu crafting
     if (craftingMenuOpen) {
         int menuWidth = 400;  // Tăng chiều rộng để chứa texture

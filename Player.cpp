@@ -1,5 +1,6 @@
 
 #include "Player.h"
+#include "Game.h"
 
 const float Player::EFFECT_DURATION = 30.0f;  // 30 giây
 
@@ -33,6 +34,8 @@ Player::Player(int x, int y, int speed, int p_width, int p_height)
     SwordDamage = 30;
     frameAttack = 0;
     cooldownAttack = 2.0f;
+
+    game = nullptr; // Khởi tạo con trỏ Game
 
 }
 
@@ -188,6 +191,7 @@ void Player::handleInput(const SDL_Event& event, GameMap& map_data,
     if (keystates[SDL_SCANCODE_SPACE] && onGround && !checkCollisionVertical(map_data.getMapData(), true) && !checkHead(map_data.getMapData())) {
         velocityY = jumpForce;
         onGround = false;
+        if (game) game->playJumpSound(); // Phát âm thanh nhảy
     }
 
     static bool ePressed = false;

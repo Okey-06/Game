@@ -6,6 +6,7 @@
 #include "Inventory.h"
 #include "Enemy.h"
 
+class Game;
 
 class Player {
 public:
@@ -54,6 +55,7 @@ public:
     void resetPlayer();  // Hàm reset player khi chết
     bool GetisPaused() const { return isPaused; }  // Kiểm tra game có đang tạm dừng không
     bool GetisGameOver() const { return gameOver; }  // Kiểm tra game over
+    void setGame(Game* g) { game = g; } // Setter cho con trỏ Game
 
 private:
     float x, y;
@@ -137,6 +139,7 @@ private:
     SDL_Renderer* renderer;
 
     Mix_Music* backgroundMusic = nullptr;
+    Game* game; // Con trỏ tới Game để gọi playJumpSound
 
 };
 
