@@ -131,7 +131,7 @@ private:
     bool gameWon = false;
     bool isPaused = false;  // Trạng thái tạm dừng
     bool gameOver = false;  // Trạng thái thua game
-    int deathCount = 4;     // Đếm số lần chết
+    int deathCount = 0;     // Đếm số lần chết
 
     SDL_Texture* pauseTexture = NULL;
     SDL_Texture* winTexture = NULL;    // Texture khi thắng

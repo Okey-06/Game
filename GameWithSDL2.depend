@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\main.cpp
+1743455173 source:c:\users\admin\desktop\code\gamewithsdl2\main.cpp
 	"Game.h"
 	"Globals.h"
 	"Menu.h"
@@ -18,12 +18,12 @@
 1743454173 source:c:\users\admin\desktop\code\gamewithsdl2\game.cpp
 	"Game.h"
 
-1743454288 c:\users\admin\desktop\code\gamewithsdl2\player.h
+1743455186 c:\users\admin\desktop\code\gamewithsdl2\player.h
 	"Map.h"
 	"Inventory.h"
 	"Enemy.h"
 
-1743454280 source:c:\users\admin\desktop\code\gamewithsdl2\player.cpp
+1743454416 source:c:\users\admin\desktop\code\gamewithsdl2\player.cpp
 	"Player.h"
 	"Game.h"
 

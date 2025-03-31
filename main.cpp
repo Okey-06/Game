@@ -6,7 +6,7 @@ int main(int argc, char* argv[]) {
     srand(time(0));
     Game game;
 
-    if (!game.init("SDL2 Game", SCR_W, SCR_H)) {
+    if (!game.init("Slime Phiêu lưu ký", SCR_W, SCR_H)) {
         return -1;
     }
 
