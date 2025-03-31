@@ -233,7 +233,7 @@ void Player::handleInput(const SDL_Event& event, GameMap& map_data,
     // Xử lý chọn công thức và craft khi menu mở
     if (inventory.isCraftingMenuOpen()) {
         if (event.type == SDL_KEYDOWN) {
-            if (event.key.keysym.sym >= SDLK_1 && event.key.keysym.sym <= SDLK_3) {
+            if (event.key.keysym.sym >= SDLK_1 && event.key.keysym.sym <= SDLK_9) {
                 int index = event.key.keysym.sym - SDLK_1;  // Chọn công thức 0, 1, 2
                 inventory.selectCraftingRecipe(index);
             }

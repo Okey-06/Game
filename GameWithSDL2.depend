@@ -15,7 +15,7 @@
 1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\texturemanager.cpp
 	"TextureManager.h"
 
-1743454173 source:c:\users\admin\desktop\code\gamewithsdl2\game.cpp
+1743459382 source:c:\users\admin\desktop\code\gamewithsdl2\game.cpp
 	"Game.h"
 
 1743455186 c:\users\admin\desktop\code\gamewithsdl2\player.h
@@ -23,7 +23,7 @@
 	"Inventory.h"
 	"Enemy.h"
 
-1743454416 source:c:\users\admin\desktop\code\gamewithsdl2\player.cpp
+1743460092 source:c:\users\admin\desktop\code\gamewithsdl2\player.cpp
 	"Player.h"
 	"Game.h"
 

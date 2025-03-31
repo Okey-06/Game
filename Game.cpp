@@ -3,7 +3,7 @@
 // Định nghĩa biến toàn cục từ Globals.h
 std::vector<Mix_Music*> musicPlaylist;
 int currentMusicIndex = 0;
-int musicVolume = 64; // Âm lượng mặc định (50% của 128)
+int musicVolume = 16; // Âm lượng mặc định (50% của 128)
 Mix_Chunk* jumpSound = nullptr; // Khởi tạo âm thanh nhảy
 
 Game::Game() : window(nullptr), renderer(nullptr), running(false) {}
@@ -125,6 +125,26 @@ bool Game::init(const char* title, int scr_width, int scr_height) {
     map->loadFromFile("txt/map.txt");
     map->loadTextureM(renderer, "block");  // Chỉ load tile texture
 
+//    player->inventory.addItem(Inventory::ITEM_SLIME_BOOTS);
+//    Item speedpotion = Inventory::ITEM_SPEED_POTION;
+//    speedpotion.quantity = 5;
+//    player->inventory.addItem(speedpotion);
+//    Item stone = Inventory::ITEM_STONE;
+//    stone.quantity = 63;
+//    player->inventory.addItem(stone);
+//    Item wood = Inventory::ITEM_WOOD;
+//    wood.quantity = 64;
+//    player->inventory.addItem(wood);
+//    Item rope = Inventory::ITEM_ROPE;
+//    rope.quantity = 64;
+//    player->inventory.addItem(rope);
+//    Item gold = Inventory::ITEM_GOLD;
+//    gold.quantity = 120;
+//    player->inventory.addItem(gold);
+//    Item stick = Inventory::ITEM_STICK;
+//    stick.quantity = 64;
+//    player-> inventory.addItem(stick);
+
     running = true;
     return true;
 }
@@ -151,10 +171,10 @@ void Game::handleEvents() {
             }
             // Điều chỉnh âm lượng bằng phím + và -
             if (event.key.keysym.sym == SDLK_EQUALS || event.key.keysym.sym == SDLK_PLUS) {
-                setMusicVolume(musicVolume + 10);
+                setMusicVolume(musicVolume + 5);
             }
             if (event.key.keysym.sym == SDLK_MINUS) {
-                setMusicVolume(musicVolume - 10);
+                setMusicVolume(musicVolume - 5);
             }
         }
 
