@@ -691,20 +691,37 @@ void Player::render(SDL_Renderer* renderer, TextureManager& textureManager) {
 
    // Hiển thị màn hình thắng
     if (gameWon) {
-            winTexture = textureManager.getTexture("gamewin");
-            SDL_Rect winRect = {0, 0, SCR_W, SCR_H};  // Toàn màn hình
-            SDL_RenderCopy(renderer, winTexture, NULL, &winRect);
+        winTexture = textureManager.getTexture("gamewin");
+        SDL_Rect winRect = {0, 0, SCR_W, SCR_H};  // Toàn màn hình
+        SDL_RenderCopy(renderer, winTexture, NULL, &winRect);
 
-            SDL_Color textColor = {255, 255, 0, 255};
-            std::string winText = "You Win! Reached the Goal at Level " + std::to_string(level) + "! Press R to Restart or Q to Quit";
-            SDL_Surface* textSurface = TTF_RenderText_Solid(font, winText.c_str(), textColor);
-            SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
+        SDL_Color textColor = {255, 255, 0, 255};
+        std::string winText = "You Win! Reached the Goal at Level " + std::to_string(level) + "! Press R to Restart or Q to Quit";
+        SDL_Surface* textSurface = TTF_RenderText_Solid(font, winText.c_str(), textColor);
+        SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
 
-            SDL_Rect textRect = { SCR_W / 2 - textSurface->w / 2, SCR_H / 2 - textSurface->h / 2 + 100, textSurface->w, textSurface->h };
-            SDL_RenderCopy(renderer, textTexture, NULL, &textRect);
+        SDL_Rect textRect = { SCR_W / 2 - textSurface->w / 2, 100, textSurface->w, textSurface->h };
+        SDL_RenderCopy(renderer, textTexture, NULL, &textRect);
 
-            SDL_FreeSurface(textSurface);
-            SDL_DestroyTexture(textTexture);
+        SDL_FreeSurface(textSurface);
+        SDL_DestroyTexture(textTexture);
+    }
+    if(gameOver) {
+        gameOverTexture = textureManager.getTexture("gameover");
+        SDL_Rect winRect = {0, 0, SCR_W, SCR_H};  // Toàn màn hình
+        SDL_RenderCopy(renderer, gameOverTexture, NULL, &winRect);
+
+        SDL_Color textColor = {255, 255, 0, 255};
+        std::string overText = "GameOver at Level " + std::to_string(level) + "! Press R to Restart or Q to Quit";
+        SDL_Surface* textSurface = TTF_RenderText_Solid(font, overText.c_str(), textColor);
+        SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
+
+        SDL_Rect textRect = { SCR_W / 2 - textSurface->w / 2, 100, textSurface->w, textSurface->h };
+        SDL_RenderCopy(renderer, textTexture, NULL, &textRect);
+
+        SDL_FreeSurface(textSurface);
+        SDL_DestroyTexture(textTexture);
+
     }
     // Hiển thị màn hình tạm dừng
     if (isPaused) {

@@ -66,6 +66,9 @@ bool Game::init(const char* title, int scr_width, int scr_height) {
     if (!textureManager.loadTexture("resume_icon", "gfx/resume.png", renderer)) return false;
     if (!textureManager.loadTexture("speaker_on", "gfx/music_on.png", renderer)) return false;
     if (!textureManager.loadTexture("speaker_off", "gfx/music_off.png", renderer)) return false;
+    if (!textureManager.loadTexture("gamewin", "gfx/gamewin.png", renderer)) return false;
+    if (!textureManager.loadTexture("gameover", "gfx/gameover.png", renderer)) return false;
+
 
     // Load texture item (tùy chọn)
     auto loadOptionalTexture = [&](const std::string& id, const std::string& path) {

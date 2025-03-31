@@ -15,15 +15,15 @@
 1743397592 source:c:\users\admin\desktop\code\gamewithsdl2\texturemanager.cpp
 	"TextureManager.h"
 
-1743451961 source:c:\users\admin\desktop\code\gamewithsdl2\game.cpp
+1743454173 source:c:\users\admin\desktop\code\gamewithsdl2\game.cpp
 	"Game.h"
 
-1743448996 c:\users\admin\desktop\code\gamewithsdl2\player.h
+1743454288 c:\users\admin\desktop\code\gamewithsdl2\player.h
 	"Map.h"
 	"Inventory.h"
 	"Enemy.h"
 
-1743452991 source:c:\users\admin\desktop\code\gamewithsdl2\player.cpp
+1743454280 source:c:\users\admin\desktop\code\gamewithsdl2\player.cpp
 	"Player.h"
 	"Game.h"
 
