@@ -317,7 +317,7 @@ void Player::update(float deltaTime, GameMap& map_data) {
         return;
     }
 
-    if (hp <= 0 || y > map_data.getMap().max_y) {  // max_y là chiều cao tối đa của map
+    if (hp <= 0 || y >= map_data.getMap().max_y - width) {  // max_y là chiều cao tối đa của map
         if (!isDead) {
             isDead = true;
             deathTimer = RESPAWN_TIME;  // Đặt thời gian hồi sinh
