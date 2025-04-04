@@ -30,6 +30,7 @@ public:
     void renderSpeakerIcon(); // Vẽ biểu tượng loa
     void loadJumpSound(const std::string& filePath); // Tải âm thanh nhảy
     void playJumpSound(); // Phát âm thanh nhảy
+    bool isMusicPaused() const { return isMusicPlaying; }
 
 private:
     SDL_Window* window;

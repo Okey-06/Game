@@ -2,7 +2,7 @@
 
 // Định nghĩa biến toàn cục từ Globals.h
 std::vector<Mix_Music*> musicPlaylist;
-int currentMusicIndex = 0;
+int currentMusicIndex = -1;
 int musicVolume = 16; // Âm lượng mặc định (50% của 128)
 Mix_Chunk* jumpSound = nullptr; // Khởi tạo âm thanh nhảy
 
@@ -104,6 +104,12 @@ bool Game::init(const char* title, int scr_width, int scr_height) {
     loadJumpSound("sfx/jumpsound.wav");
     // Lưu con trỏ Game để dùng trong callback
     SDL_SetWindowData(window, "game", this);
+    Mix_HookMusicFinished([]() {
+        Game* game = static_cast<Game*>(SDL_GetWindowData(SDL_GetKeyboardFocus(), "game"));
+        if (game && !game->isMusicPaused()) { // Chỉ chuyển nếu không tạm dừng
+            game->playNextMusic();
+        }
+    });
 
     lastFrameTime = SDL_GetTicks();
     deltaTime = 0.0f;
@@ -318,14 +324,6 @@ void Game::playNextMusic() {
     } else {
         isMusicPlaying = true;
     }
-
-    // Đăng ký callback để tự động chuyển bài khi nhạc kết thúc
-    Mix_HookMusicFinished([]() {
-        Game* game = static_cast<Game*>(SDL_GetWindowData(SDL_GetKeyboardFocus(), "game"));
-        if (game) {
-            game->playNextMusic(); // Gọi lại để lặp vòng
-        }
-    });
 }
 
 void Game::pauseMusic() {
