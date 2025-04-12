@@ -26,6 +26,8 @@ Game phiêu lưu 2D, nơi bạn điều khiển nhân vật chính tham gia vào
 
 **E**: Mở túi đồ.
 
+**U**: Sử dụng vật phẩm.
+
 *Quái vật và vật phẩm rơi*
 
 **Scarecrow** (Bù Nhìn): Tỷ lệ rơi Dây (Rope), Que (Stick), Vàng (Gold).
